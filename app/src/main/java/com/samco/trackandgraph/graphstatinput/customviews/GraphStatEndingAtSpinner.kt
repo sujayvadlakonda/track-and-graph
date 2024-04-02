@@ -49,7 +49,7 @@ sealed interface SampleEndingAt {
 
     object Latest : SampleEndingAt {
         override val option = SampleEndingAtOption.LATEST
-        override fun asDateTime() = null
+        override fun asDateTime() = OffsetDateTime.now()
     }
 
     data class Custom(val dateTime: OffsetDateTime?) : SampleEndingAt {
